@@ -207,6 +207,29 @@ section {
     animation: changeRole 10s infinite;
 }
 
+@keyframes changeRole {
+
+    0%,
+    100% {
+        opacity: 0;
+    }
+
+    10%,
+    30% {
+        opacity: 1;
+    }
+
+    40%,
+    60% {
+        opacity: 1;
+    }
+
+    70%,
+    90% {
+        opacity: 0;
+    }
+}
+
 .title {
     font-size: 3rem;
     font-weight: bolder;
