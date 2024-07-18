@@ -6,18 +6,19 @@ function toggleMenu() {
     icon.classList.toggle("open");
 }
 
-const text = document.querySelector(".section__text__p2");
+document.addEventListener('DOMContentLoaded', () => {
+    const roles = ["Front-End Developer", "React Developer", "Software Developer"];
+    const roleElement = document.getElementById('role');
+    let currentIndex = 0;
 
-const textLoad = () => {
-    setTimeout(() => {
-        text.textContent = "Front-End-Developer!";
-    }, 1000);
+    function changeRole() {
+        roleElement.style.opacity = 0;
+        setTimeout(() => {
+            currentIndex = (currentIndex + 1) % roles.length;
+            roleElement.textContent = roles[currentIndex];
+            roleElement.style.opacity = 1;
+        }, 500);
+    }
 
-    setTimeout(() => {
-        text.textContent = "React Developer";
-    }, 3000);
-
-
-}
-
-textLoad();
+    setInterval(changeRole, 4000);
+});
